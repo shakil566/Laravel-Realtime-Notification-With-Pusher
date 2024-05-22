@@ -29,7 +29,7 @@ Route::post('/user-registration', function () {
 
     //get user name
     $userName = request()->name;
-// dd($userName);
+    
     //send user name to event
     event( new NewUserNotificaton($userName));
     return redirect('/user-registration');
