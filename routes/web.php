@@ -1,6 +1,6 @@
 <?php
 
-use App\Events\NewUserNotificaton;
+use App\Events\NewUserNotification;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -31,6 +31,6 @@ Route::post('/user-registration', function () {
     $userName = request()->name;
     
     //send user name to event
-    event( new NewUserNotificaton($userName));
+    event( new NewUserNotification($userName));
     return redirect('/user-registration');
 });
